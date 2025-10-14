@@ -7,7 +7,7 @@
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-newList = None
+newList = ['hello']
 
 ########################################################################
 
@@ -28,10 +28,12 @@ list1 = [ "This", "is", "a", "list" ]
 appendElement = "ok?"
 #  to the end of 'listCopy'
 #  'list1' should remain unchanged
+
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-listCopy = None
+listCopy = list1.copy()
+listCopy.append(appendElement)
 
 ########################################################################
 
@@ -55,7 +57,10 @@ cycleMeCopy = list(cycleMe)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-
+cycleMe.remove(1)
+cycleMe.append(1)
+cycleMe.remove(2)
+cycleMe.append(2)
 
 ########################################################################
 
@@ -73,7 +78,7 @@ keepMe = clearJustMe
 #  so it still points to the original list. Do nothing to 'keepMe'.
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
+clearJustMe = []
 
 
 ########################################################################
@@ -93,7 +98,7 @@ loseMe = clearAll
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-
+clearAll.clear()
 
 ########################################################################
 
@@ -110,8 +115,9 @@ allScores = [ random.randint(0, 100), random.randint(0, 100), random.randint(0, 
 allScoresCopy = list(allScores)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
+allScoresCopy.sort(reverse=True)
+top3Scores = allScoresCopy[0:3]
 
-top3Scores = None
 
 ########################################################################
 
