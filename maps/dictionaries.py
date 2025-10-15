@@ -10,7 +10,9 @@
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-newDict = None
+newDict = {
+			"key" :'value',
+		  }
 
 ########################################################################
 
@@ -38,13 +40,14 @@ getMyAge = {
 #  Hint: The solution requires the inbuilt datetime module imported below
 #  There is nothing complicated about this data type, in
 #  fact this data type makes life much easier when working with date:
-import datetime
+from datetime import datetime
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-ageInDays = None
-ageInMonths = None
-ageInYears = None
+ageInDays = (datetime.today() - datetime(getMyAge["DOB"]["year"], getMyAge["DOB"]["month"], getMyAge["DOB"]["day"])).days
+ageInMonths = ageInDays/12
+ageInYears = ageInDays/365
+
 
 ########################################################################
 
@@ -77,8 +80,9 @@ import copy
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-deepDictionaryCopy = None
-
+deepDictionaryCopy = deepDictionary.copy()
+deepDictionaryCopy['siblings'] = ["Michael", "Alex"]
+deepDictionaryCopy['name'] = 'Kravis Lott'
 ########################################################################
 
 
@@ -112,7 +116,10 @@ student = {
 studentCopy = dict(student)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
+student["grade"] = studentGrade + 1
+student["gpa"] = studentGPA - 0.15
+student['absences'] = 1
+student["courses"] += {"subject":"MATH 204"}
 
 
 ########################################################################
@@ -183,8 +190,8 @@ totalTests += 1
 print("")
 
 # Get My Age
-correctDOB = datetime.date(getMyAge["DOB"]["year"], getMyAge["DOB"]["month"], getMyAge["DOB"]["day"])
-correctAgeInDays = (datetime.date.today() - correctDOB).days
+correctDOB = datetime(getMyAge["DOB"]["year"], getMyAge["DOB"]["month"], getMyAge["DOB"]["day"])
+correctAgeInDays = (datetime.today() - correctDOB).days
 correctgAgeInMonths = correctAgeInDays / 12
 correctAgeInYears = correctAgeInDays / 365
 if ageInDays == None or ageInMonths == None or ageInYears == None:
